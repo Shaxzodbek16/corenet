@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Modern Developer Portfolio Design System */
+
+@layer base {
+  :root {
+    /* Light mode using your beautiful blue-gray palette */
+    --background: 60 7% 87%; /* Platinum */
+    --foreground: 213 52% 11%; /* Rich Black */
+    
+    --card: 0 0% 100%;
+    --card-foreground: 213 52% 11%; /* Rich Black */
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 213 52% 11%; /* Rich Black */
+    
+    /* Primary: YInMn Blue */
+    --primary: 213 30% 36%; /* YInMn Blue */
+    --primary-foreground: 60 7% 87%; /* Platinum */
+    
+    /* Secondary: Silver Lake Blue variations */
+    --secondary: 214 20% 90%; /* Light Silver Lake Blue */
+    --secondary-foreground: 213 52% 11%; /* Rich Black */
+    
+    --muted: 214 20% 85%; /* Muted Silver Lake Blue */
+    --muted-foreground: 214 37% 17%; /* Oxford Blue */
+    
+    /* Accent: Brighter YInMn Blue */
+    --accent: 213 30% 45%;
+    --accent-foreground: 60 7% 87%; /* Platinum */
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 214 20% 75%; /* Silver Lake Blue */
+    --input: 214 20% 75%; /* Silver Lake Blue */
+    --ring: 213 30% 36%; /* YInMn Blue */
+    
+    /* Beautiful gradients with your palette */
+    --gradient-primary: linear-gradient(135deg, hsl(213 30% 36%), hsl(214 20% 58%));
+    --gradient-secondary: linear-gradient(135deg, hsl(60 7% 87%), hsl(214 20% 85%));
+    --gradient-hero: linear-gradient(135deg, hsl(213 52% 11%) 0%, hsl(214 37% 17%) 50%, hsl(213 30% 36%) 100%);
+    
+    /* Shadows with your color palette */
+    --shadow-primary: 0 10px 30px -5px hsl(213 30% 36% / 0.3);
+    --shadow-glow: 0 0 40px hsl(213 30% 36% / 0.2);
+    --shadow-card: 0 4px 20px -4px hsl(213 52% 11% / 0.1);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 60 7% 90%;
+    --sidebar-foreground: 213 52% 11%;
+    --sidebar-primary: 213 30% 36%;
+    --sidebar-primary-foreground: 60 7% 87%;
+    --sidebar-accent: 214 20% 85%;
+    --sidebar-accent-foreground: 213 52% 11%;
+    --sidebar-border: 214 20% 75%;
+    --sidebar-ring: 213 30% 36%;
+  }
+
+  .dark {
+    /* Dark mode using your beautiful blue-gray palette */
+    --background: 213 52% 11%; /* Rich Black */
+    --foreground: 60 7% 87%; /* Platinum */
+    
+    --card: 214 37% 17%; /* Oxford Blue */
+    --card-foreground: 60 7% 87%; /* Platinum */
+    
+    --popover: 214 37% 17%; /* Oxford Blue */
+    --popover-foreground: 60 7% 87%; /* Platinum */
+    
+    /* Primary: Brighter YInMn Blue for dark mode */
+    --primary: 213 30% 50%; /* Brighter YInMn Blue */
+    --primary-foreground: 213 52% 11%; /* Rich Black */
+    
+    --secondary: 214 37% 22%; /* Darker Oxford Blue variation */
+    --secondary-foreground: 60 7% 87%; /* Platinum */
+    
+    --muted: 214 37% 20%; /* Muted Oxford Blue */
+    --muted-foreground: 214 20% 70%; /* Light Silver Lake Blue */
+    
+    /* Accent: Even brighter for contrast */
+    --accent: 213 30% 55%;
+    --accent-foreground: 213 52% 11%; /* Rich Black */
+    
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 60 7% 87%; /* Platinum */
+    
+    --border: 214 37% 25%; /* Oxford Blue variation */
+    --input: 214 37% 25%; /* Oxford Blue variation */
+    --ring: 213 30% 50%; /* Brighter YInMn Blue */
+    
+    /* Dark gradients with your palette */
+    --gradient-primary: linear-gradient(135deg, hsl(213 30% 50%), hsl(214 20% 58%));
+    --gradient-hero: linear-gradient(135deg, hsl(213 52% 11%) 0%, hsl(214 37% 17%) 50%, hsl(213 30% 36%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(214 37% 17%), hsl(214 37% 22%));
+    
+    /* Dark shadows */
+    --shadow-primary: 0 10px 30px -5px hsl(213 30% 50% / 0.4);
+    --shadow-glow: 0 0 40px hsl(213 30% 50% / 0.3);
+    --shadow-card: 0 4px 20px -4px hsl(213 52% 11% / 0.3);
+    
+    --sidebar-background: 213 52% 11%;
+    --sidebar-foreground: 60 7% 87%;
+    --sidebar-primary: 213 30% 50%;
+    --sidebar-primary-foreground: 213 52% 11%;
+    --sidebar-accent: 214 37% 22%;
+    --sidebar-accent-foreground: 60 7% 87%;
+    --sidebar-border: 214 37% 25%;
+    --sidebar-ring: 213 30% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  /* Gradient utilities */
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .bg-gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+  
+  /* Shadow utilities */
+  .shadow-primary {
+    box-shadow: var(--shadow-primary);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  /* Animation utilities */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+  
+  /* Tech-specific utilities */
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .border-gradient {
+    border-image: var(--gradient-primary) 1;
+  }
+}
